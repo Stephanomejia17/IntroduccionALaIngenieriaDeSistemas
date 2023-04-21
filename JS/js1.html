@@ -1,0 +1,34 @@
+<!--Diseñasr un algoritmo en js utilizando funciones para determinar 
+la cantidad de veces que se repite una letra en una palabra-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function CantidadDeL(palabra, letra){
+                let arr = str.split('');
+                console.log(arr);
+                tamaño = length(arr);
+                var a = 0;
+                for (i= 0; i<tamaño; i++){
+                    if(arr[i] == letra){
+                        a += 1;
+                    }
+                }
+                document.write("<strong> Veces que se repíte: " + a + "</stong>")
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>LETRAS REPETIDAS</h2>
+        <form>
+            <label for="oracion" id="oracion">Oracion:</label>
+            <input type="text" id="oracion" name="oracion"><br><br>
+            <label for="letra" id="letra">Letra</label>
+            <input type="text" id="letra" name="oracion"><br><br>
+            <button value="Enviar" onclick="CantidadDeL(oracion, letra)">De click aqui</button>
+        </form>
+    </body>
+</html>
