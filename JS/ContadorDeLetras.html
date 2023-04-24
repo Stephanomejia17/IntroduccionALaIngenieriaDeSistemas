@@ -1,0 +1,37 @@
+<!--Diseñasr un algoritmo en js utilizando funciones para determinar 
+la cantidad de veces que se repite una letra en una palabra-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function CantidadDeL(){
+                let palabra = (document.getElementById("oracion").value).toUpperCase();
+                let letra = (document.getElementById("letra").value).toUpperCase();
+
+                let arr = palabra.split('');
+                var tamanio = palabra.length;
+                var cont = 0;
+
+                for(i=0; i<tamanio+1; i++){
+                    if(arr[i] == letra){
+                        cont += 1;
+                    }
+                }
+                document.write("La cantidad de veces que se repite la letra es: " + cont)
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>LETRAS REPETIDAS</h2>
+        <form>
+            <label for="oracion">Oracion:</label>
+            <input type="text" id="oracion" name="oracion" value=""><br><br>
+            <label for="letra">Letra</label>
+            <input type="text" id="letra" name="letra" value=""><br><br>
+            <button value="Submit" onclick="CantidadDeL()">De click aqui</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practicando</title>        
+        <script>
+            function Palabra(){
+                let palabra = 'Anita lava la tina';
+                let letra = "a";
+                let arr = palabra.split('');
+                var tamanio = palabra.length;
+                var cont = 0
+                for(i=0; i<tamanio; i++){
+                    if(arr[i] == letra){
+                        cont += 1;
+                        console.log(palabra[i]);
+                    }
+
+                }
+                document.write("La cantidad de veces que se repite es: " + cont)
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Practica</h1>
+        <button value="Submit" onclick="Palabra()">De click aqui</button>
+    </body>
+</html>

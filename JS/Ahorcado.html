@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Juego Ahorcado</title>
+        <script>
+            function opciones(){
+                document.write(
+                        "<select id=opciones>"
+                        +  "<option>a</option>"
+                        +  "<option>b</option>"
+                        +  "<option>c</option>"
+                        +  "<option>d</option>"
+                        +  "<option>e</option>"
+                        +  "<option>f</option>"
+                        +  "<option>g</option>"
+                        +  "<option>h</option>"
+                        +  "<option>i</option>"
+                        +  "<option>j</option>"
+                        +  "<option>k</option>"
+                        +  "<option>l</option>"
+                        +  "<option>m</option>"
+                        +  "<option>n</option>"
+                        +  "<option>ñ</option>"
+                        +  "<option>o</option>"
+                        +  "<option>p</option>"
+                        +  "<option>q</option>"
+                        +  "<option>r</option>"
+                        +  "<option>s</option>"  
+                        +  "<option>t</option>"
+                        +  "<option>u</option>"
+                        +  "<option>v</option>"
+                        +  "<option>w</option>"
+                        +  "<option>x</option>"
+                        +  "<option>y</option>"
+                        +  "<option>z</option>"
+                        + "</select>")
+            }
+            function generadorDePalabras(){
+                let palabras = ['gato', 'perro', 'condominio', 'alcoba'];
+                var tamanio = (palabras.length)-1;
+                var aleatorio = Math.floor(Math.random() * (tamanio + 1));
+                let palabraSelect = palabras[aleatorio];
+                var tamanioDePalabra = (palabras[aleatorio]).length;
+
+                var vidas = 5;
+                
+                for(i=0; i<tamanioDePalabra; i++){
+                    console.log(opciones() + " ");
+                }
+                document.write("<br><button value=Submit onClick=comprobador(palabraSelect)>ClickParaEnviar</button>");
+
+            }
+            function comprobador(palabra){
+                document.write(" " +palabra)
+            }
+            
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>Ahorcado</h1>
+            <button value="Submit" id="Boton" onclick="generadorDePalabras()">Presione Aquí</button>
+
+           
+        </center>
+
+        
+    </body>
+</html>
