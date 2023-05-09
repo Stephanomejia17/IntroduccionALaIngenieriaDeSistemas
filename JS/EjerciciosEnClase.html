@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Programación Modular-->
+        <script>
+            function par(n){
+                if(n % 2 == 0)
+                    return true;
+                else
+                    return false;
+            } 
+            function primera(n){
+                return Math.round(n/100);
+            }
+            function segunda(n){
+                return Math.floor((n%100)/10)
+            }
+            function tercera(n){
+                return n%10
+            }
+            function divisoresPares(n){
+                let diviPares = ""
+
+                let array = []
+                cont = 0
+
+                for(i=1; i<=n; i++){
+                    if(n%i == 0 && par(i)){
+                        //diviPares += i + " ";
+                        array[cont] = i
+                    }
+                    cont++
+                }
+                //InnerHTML sirve para añadir al documento texto
+                document.getElementById('Miparrafito').innerHTML = diviPares
+            }
+            function MiQueridoVilla(){
+                //El .value se usa para capturar el cualquier valor, y lo
+                //captura como string
+
+                //El parseInt sirve para convertir en Int
+                let numero = parseInt(document.getElementById('mi_Num').value);
+
+                let prim = primera(numero);
+                let seg = segunda(numero);
+                let terc = tercera(numero);
+                document.write('<h1> Primero = ' + prim + ' segunda = ' + seg + 'tercera = '+ terc +'</h1>');
+
+            }
+        </script>
+    </head>
+    <body>
+        <!--Caja de Texto-->
+        <input type="text" id="mi_Num">
+        <button onclick="MiQueridoVilla()"> dame duro </button>
+        <p id="Miparrafito"> este es mi parrafo favorito</p>
+ </body>
+</html>
