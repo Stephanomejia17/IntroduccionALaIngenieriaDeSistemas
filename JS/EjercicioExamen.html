@@ -1,0 +1,78 @@
+<!--3.	Chepe Un mecánico supersticioso valora los vehículos (buenos, regulares o malos) 
+    de acuerdo con el número de su placa, se sabe que la placa de los vehículos tiene un 
+    numero de tres cifras, si la placa del vehículo es por ejemplo 526, chepe determina 
+    su calidad obteniendo el mayor número que puede formar con las cifras 5, 2 y 6, en 
+    este caso el mayor número seria 652. Don chepe divide el mayor número (652) por el 
+    valor de la placa (526) y obtiene el porcentaje que indica la calidad del vehículo, 
+    los vehículos con porcentajes superiores al 75% son etiquetados (por chepe) como buenos, 
+    los vehículos con porcentajes entre (45% a 74%) son regulares y los otros vehículos son malos.  
+    Diseñe una app que permita determinar la calidad de un vehículo ingresando su placa, 
+    según el método de Chepe. En un botón de ingreso se debe pintar con verde para los 
+    vehículos buenos, en azul a los vehículos regulares y en rojo a los vehículos malos. 
+
+    Primera (numero div 100)
+    Tercera (numero % 10)
+    Segunda cifra ((numero %100) div 10)-->
+
+<html>
+    <head>
+        <script>
+            function comprobar(){
+                let placa = parseInt(document.getElementById('placa').value);
+                let cifra1 = Math.floor(placa / 100)
+                let cifra2 = Math.floor((placa % 100)/10)
+                let cifra3 = Math.floor(placa%10)
+                
+                let valorP1 = (cifra1 * 100) + (cifra2 * 10) + cifra3
+                let valorP2 = (cifra1 *100) + (cifra3 * 10) + cifra2
+
+                let valorP3 = (cifra2 *100) + (cifra3*10) +cifra1
+                let valorP4 = (cifra2 * 100) + (cifra1*10) + cifra3
+                
+                let valorP5 = (cifra3 * 100) + (cifra2 * 10) + cifra1
+                let valorP6 = (cifra3 * 100) + (cifra1 * 10) + cifra2
+
+                Mayor = -999
+
+                if(valorP1 > Mayor){
+                    Mayor = valorP1
+                }
+                if(valorP2 > Mayor){
+                    Mayor = valorP2
+                }
+                if(valorP3 > Mayor){
+                    Mayor = valorP3
+                }
+                if(valorP4 > Mayor){
+                    Mayor = valorP4
+                }
+                if(valorP5 > Mayor){
+                    Mayor = valorP5
+                }
+                if(valorP6 > Mayor){
+                    Mayor = valorP6
+                }
+                
+                porcentaje = Math.floor((placa / Mayor) *100)
+
+                if(porcentaje >= 75){
+                    document.getElementById('parrafo').innerHTML = "<h4 style=color:green>Calidad Buena </h4>"
+                }
+                else if(porcentaje >= 45 && porcentaje < 75){
+                    document.getElementById('parrafo').innerHTML = "<h4 style=color:blue>Calidad Regular </h4>"
+                }
+                else{
+                    document.getElementById('parrafo').innerHTML = "<h4 style=color:red>Calidad Mala </h4>"
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h2><p>Ingrese el número de placa</p></h2>
+        
+        <input type="text" id="placa">
+        <button id="Submit" onclick="comprobar()">Submit</button>
+        <h3><p id="parrafo"></p></h3>
+    </body>
+</html>

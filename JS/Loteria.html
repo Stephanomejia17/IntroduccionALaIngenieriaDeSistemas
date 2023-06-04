@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            function Numeros(){
+                let aleatorio = Math.floor(Math.random() * (999 - 100 +1) + 100);
+                let numero = parseInt(document.getElementById('valor').value);
+                let primeraNumero = Math.floor(numero/100);
+                let segundaNumero = Math.floor((numero % 100)/10);
+                let terceraNumero = Math.floor(numero%10);
+
+                let primeraAleatorio = Math.floor(aleatorio/100);
+                let segundaAleatorio = Math.floor((aleatorio % 100)/10);
+                let terceraAleatorio = Math.floor(aleatorio%10);
+
+                let resultado = numero
+
+                document.getElementById('Parrafo').innerHTML = aleatorio
+                if(primeraNumero == primeraAleatorio && segundaNumero == segundaAleatorio && terceraNumero == terceraAleatorio){
+                    resultado = resultado * 1000;
+                    document.getElementById('Ganas').innerHTML = resultado;
+                    
+                }
+                else if(primeraNumero != primeraAleatorio && segundaNumero != segundaAleatorio && terceraNumero != terceraAleatorio){
+                    resultado = 200;
+                    document.getElementById('Paga').innerHTML = resultado;
+                    
+                    
+                }
+                else if(terceraAleatorio == terceraNumero){
+                    resultado = resultado * 100;
+                    document.getElementById('Ganas').innerHTML = resultado;
+                    
+                    
+                }
+
+                
+                
+            }
+
+        </script>
+    </head>
+    <body>
+        
+        <p>Ingrese un número de 3 cifras</p>
+        <input type="text" id="valor">
+        <button onclick="Numeros()">Ingresar</button>
+        <p>Resultado:</p> <p id="Parrafo"></p>
+        <p>Ganas: </p>
+        <p id="Ganas"></p>
+        <p>Paga: </p>
+        <p id="Paga"></p>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/ASU/Documents/Universidad de Medellin/Semestre I/IntroduccionALaIngenieriaDeSistemas/SQLITE/Hospital.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1475"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainCitas"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Pacientes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="99"/><column index="3" value="97"/><column index="4" value="163"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Pacientes (dni TEXT PRIMARY KEY, nombre TEXT NOT NULL, telefono text, fecha_nacimiento TEXT not NULL)
+
+CREATE TABLE Medicos (dni TEXT PRIMARY KEY, nombre TEXT NOT NULL, apellido TEXT, especialidad TEXT NOT NULL)
+
+CREATE TABLE Citas (cod INTEGER PRIMARY KEY AUTOINCREMENT, dni_P TEXT REFERENCES Pacientes(dni), dni_M TEXT REFERENCES Medicos(dni), fecha TEXT)
+
+INSERT INTO Pacientes VALUES(&quot;103&quot;, &quot;Edgar Otazo&quot;, &quot;3254568951&quot;, &quot;07/07/1979&quot;)
+
+INSERT INTO Medicos VALUES(&quot;307&quot;, &quot;Aristoteles&quot;, &quot;Onasis&quot;, &quot;Pediatra&quot;)
+
+SELECT * FROM Pacientes
+
+SELECT * from Medicos
+
+INSERT INTO Citas VALUES(NULL,&quot;101&quot;,&quot;307&quot;,&quot;30/05/2023 12:00&quot;)
+
+SELECT * FROM Citas</sql><current_tab id="0"/></tab_sql></sqlb_project>
